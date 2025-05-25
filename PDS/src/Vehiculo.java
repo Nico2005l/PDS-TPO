@@ -75,12 +75,4 @@ public abstract class Vehiculo {
     public void setEnVenta(boolean enVenta) {
         this.enVenta = enVenta;
     }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
-    }
 }

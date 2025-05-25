@@ -28,4 +28,13 @@ public class PedidoCompra {
     private void notificarAreas() {
         // Implementación
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        PedidoCompra other = (PedidoCompra) obj;
+        if (detallePedido == null || other.detallePedido == null) return false;
+        return detallePedido.getNroPedido() == other.detallePedido.getNroPedido();
+    }
 }
