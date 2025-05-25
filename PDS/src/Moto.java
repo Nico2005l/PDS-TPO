@@ -6,8 +6,10 @@ public class Moto extends Vehiculo {
 
     @Override
     public int calcularImpuesto() {
-        // Implementación específica
-        return 0;
+        double provincialGeneral = getCosto() * 0.05;
+        double provincialAdicional = getCosto() * 0.01;
+        return (int)(provincialGeneral + provincialAdicional);
+        
     }
     
 }

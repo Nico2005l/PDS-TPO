@@ -1,11 +1,12 @@
 public abstract class Vehiculo {
-    protected String marca;
-    protected int costo;
-    protected String modelo;
-    protected String color;
-    protected String nroChasis;
-    protected String nroMotor;
-    protected boolean enVenta;
+    private String marca;
+    private int costo;
+    private String modelo;
+    private String color;
+    private String nroChasis;
+    private String nroMotor;
+    private int precio;
+    private boolean enVenta;
 
     public abstract int calcularImpuesto();
 
@@ -73,5 +74,13 @@ public abstract class Vehiculo {
 
     public void setEnVenta(boolean enVenta) {
         this.enVenta = enVenta;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 }
