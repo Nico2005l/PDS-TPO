@@ -37,4 +37,8 @@ public class PedidoCompra {
         if (detallePedido == null || other.detallePedido == null) return false;
         return detallePedido.getNroPedido() == other.detallePedido.getNroPedido();
     }
+
+    public DetallePedido getDetallePedido() {
+        return detallePedido;
+    }
 }

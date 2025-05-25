@@ -48,4 +48,7 @@ public class DetallePedido {
     public int getNroPedido() {
         return nroPedido;
     }
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
 }

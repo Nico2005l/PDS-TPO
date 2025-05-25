@@ -1,9 +1,38 @@
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema {
     private List<Vehiculo> catalogoVehiculos;
     private List<Cliente> clientes;
     private List<PedidoCompra> pedidoCompras;
+
+
+    public Sistema() {
+        this.catalogoVehiculos = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.pedidoCompras = new ArrayList<>();
+    }
+
+    public List<Vehiculo> getCatalogoVehiculos() {
+        return catalogoVehiculos;
+    }
+
+    public List<PedidoCompra> getPedidosPorFecha(Date fecha) {
+        List<PedidoCompra> clientesPorFecha = new ArrayList<>();
+        for (PedidoCompra pedido : pedidoCompras) {
+            if (pedido.getDetallePedido().getFechaCreacion().equals(fecha)) {
+                clientesPorFecha.add(pedido);
+            }
+        }
+        return clientesPorFecha;
+    }
+
+    
+
+    public void cargarCatalogoVehiculos(List<Vehiculo> catalogoVehiculos) {
+        this.catalogoVehiculos = catalogoVehiculos;
+    }
 
     public void registrarCliente(Cliente c) {
         if (!clientes.contains(c)) {
