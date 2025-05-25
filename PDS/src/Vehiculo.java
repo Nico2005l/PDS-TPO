@@ -75,4 +75,12 @@ public abstract class Vehiculo {
     public void setEnVenta(boolean enVenta) {
         this.enVenta = enVenta;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Vehiculo vehiculo = (Vehiculo) obj;
+        return nroChasis != null && nroChasis.equals(vehiculo.nroChasis);
+    }
 }
