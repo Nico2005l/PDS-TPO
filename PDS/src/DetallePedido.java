@@ -13,6 +13,38 @@ public class DetallePedido {
     public void calcularCosto() {
         // Implementación
     }
+
+    public void agregarAdicional(ConfiguracionAdicional adicional) {
+        // Implementación
+    }
+
+    public DetallePedido(int nroPedido, Date fechaCreacion, Cliente cliente, Vehiculo vehiculo,
+            List<ConfiguracionAdicional> adicionales, Vendedor vendedor, FormaPago formaDePago) {
+        this.nroPedido = nroPedido;
+        this.fechaCreacion = fechaCreacion;
+        this.cliente = cliente;
+        this.vehiculo = vehiculo;
+        this.adicionales = adicionales;
+        this.vendedor = vendedor;
+        this.formaDePago = formaDePago;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public void setFormaDePago(FormaPago formaDePago) {
+        this.formaDePago = formaDePago;
+    }
+
     // getters, setters, constructor
     public DetallePedido(int nroPedido, Date fechaCreacion, Cliente cliente, Vehiculo vehiculo,
                          List<ConfiguracionAdicional> adicionales, Vendedor vendedor, FormaPago formaDePago) {
