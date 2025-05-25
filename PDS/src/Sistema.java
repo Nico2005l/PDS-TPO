@@ -5,7 +5,12 @@ public class Sistema {
     private List<Cliente> clientes;
 
     public void registrarCliente(Cliente c) {
-        // Implementación
+        if (!clientes.contains(c)) {
+            clientes.add(c);
+        }
+    }
+    public void registrarVehiculo(Vehiculo v) {
+        catalogoVehiculos.add(v);
     }
     public void realizarPedido(Cliente c, Vendedor v, Vehiculo vehiculo) {
         // Implementación
