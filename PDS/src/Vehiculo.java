@@ -5,7 +5,6 @@ public abstract class Vehiculo {
     private String color;
     private String nroChasis;
     private String nroMotor;
-    private int precio;
     private boolean enVenta;
 
     public abstract int calcularImpuesto();
