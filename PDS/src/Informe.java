@@ -1,5 +1,14 @@
 public class Informe {
     public void imprimirInforme() {
-        // Implementación
+        ConcesionariaSingleton concesionaria = ConcesionariaSingleton.getConcesionaria();
+        System.out.println("========================================");
+        System.out.printf("        %s%n", concesionaria.getRazonSocial());
+        System.out.println("----------------------------------------");
+        System.out.printf("CUIT:        %s%n", concesionaria.getCuit());
+        System.out.printf("Dirección:   %s%n", concesionaria.getDireccion());
+        System.out.printf("Teléfono:    %s%n", concesionaria.getTelefono());
+        System.out.printf("Email:       %s%n", concesionaria.getEmail());
+        System.out.printf("Página Web:  %s%n", concesionaria.getPaginaWeb());
+        System.out.println("========================================");
     }
 }
