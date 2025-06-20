@@ -7,7 +7,6 @@ public class AreaImpuestos implements Area {
     }
     @Override
     public void actualizarEstado() {
-        // Simula transición de estado interno de ventas
         System.out.println("Área Ventas: estado interno actualizado.");
     }
   
