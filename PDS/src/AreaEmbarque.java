@@ -8,5 +8,10 @@ public class AreaEmbarque implements Area {
         p.avanzarEstado(siguienteArea);
 
     }
+    @Override
+    public void actualizarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizarEstado'");
+    }
     
 }
