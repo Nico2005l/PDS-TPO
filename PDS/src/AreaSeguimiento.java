@@ -10,7 +10,7 @@ public class AreaSeguimiento implements Area {
 
     @Override
     public void actualizarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizarEstado'");
+        // Simula transición de estado interno de ventas
+        System.out.println("Área Ventas: estado interno actualizado.");
     }
 }
