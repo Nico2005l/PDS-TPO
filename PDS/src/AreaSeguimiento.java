@@ -7,4 +7,10 @@ public class AreaSeguimiento implements Area {
         
         // Si no hay más áreas, podrías finalizar el proceso o realizar
     }
+
+    @Override
+    public void actualizarEstado() {
+        // Simula transición de estado interno de ventas
+        System.out.println("Área Ventas: estado interno actualizado.");
+    }
 }
