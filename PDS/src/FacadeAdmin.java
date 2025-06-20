@@ -26,11 +26,38 @@ public class FacadeAdmin {
         }
     }
 
+    public void eliminarCliente(Cliente cliente) {
+        if (sistema.getClientes().contains(cliente)) {
+            // Actualizar cliente
+            sistema.getClientes().remove(cliente);
+        }else {
+            throw new IllegalArgumentException("El cliente no está registrado.");
+        }
+    }
+
+    public void eliminarVehiculo(Vehiculo vehiculo) {
+        if (sistema.getCatalogoVehiculos().contains(vehiculo)) {
+            // Actualizar vehículo
+            sistema.getCatalogoVehiculos().remove(vehiculo);
+        }else {
+            throw new IllegalArgumentException("El vehículo no está registrado.");
+        }
+    }
+
+    public void eliminarPedido(PedidoCompra pedido) {
+        if (sistema.getPedidos().contains(pedido)) {
+            // Actualizar pedido
+            sistema.getPedidos().remove(pedido);
+        }else {
+            throw new IllegalArgumentException("El pedido no está registrado.");
+        }
+    }
+
     public void generarInformes() {
         sistema.generarInforme();
     }
 
     public void administrarConfiguracion() {
-        
+        //terminar
     }
 }
