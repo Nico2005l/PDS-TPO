@@ -18,17 +18,6 @@ public class DetallePedido {
         // Implementación
     }
 
-    public DetallePedido(int nroPedido, Date fechaCreacion, Cliente cliente, Vehiculo vehiculo,
-            List<ConfiguracionAdicional> adicionales, Vendedor vendedor, FormaPago formaDePago) {
-        this.nroPedido = nroPedido;
-        this.fechaCreacion = fechaCreacion;
-        this.cliente = cliente;
-        this.vehiculo = vehiculo;
-        this.adicionales = adicionales;
-        this.vendedor = vendedor;
-        this.formaDePago = formaDePago;
-    }
-
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
