@@ -10,12 +10,14 @@ public class DetallePedido {
     private Vendedor vendedor;
     private FormaPago formaDePago;
 
-    public void calcularCosto() {
-        // Implementación
+    public double calcularCosto() {
+        return vehiculo.getCosto() + adicionales.stream()
+                .mapToDouble(ConfiguracionAdicional::getCosto)
+                .sum();
     }
 
     public void agregarAdicional(ConfiguracionAdicional adicional) {
-        // Implementación
+        adicionales.add(adicional);
     }
 
     public void setVehiculo(Vehiculo vehiculo) {
