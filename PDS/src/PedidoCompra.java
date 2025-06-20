@@ -5,12 +5,14 @@ public class PedidoCompra {
     private Area estadoPedido;
     private List<Area> areas;
     private String historial;
+    
 
-    public PedidoCompra() {
+    public PedidoCompra(DetallePedido detallePedido) {
+
         this.historial = "";
         this.estadoPedido = null; // Inicializar estadoPedido como null
         this.areas = new java.util.ArrayList<Area>();
-        this.detallePedido = new DetallePedido(); // Inicializar detallePedido
+        this.detallePedido = detallePedido;
         areas.add(new AreaVentas()); // Agregar área de ventas como ejemplo
         areas.add(new AreaCobranzas()); // Agregar área de cobranzas como ejemplo
         areas.add(new AreaImpuestos()); // Agregar área de impuestos como ejemplo
@@ -29,9 +31,6 @@ public class PedidoCompra {
         }
         
         
-    }
-    public void crearDetallePedido() {
-        // Implementación
     }
     public int getCosto() {
         // Implementación
