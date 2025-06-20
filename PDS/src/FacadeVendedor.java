@@ -7,9 +7,6 @@ public class FacadeVendedor {
         this.sistema = sistema;
     }
 
-    /**
-     * Muestra todos los vehículos disponibles en el catálogo.
-     */
     public void verVehiculosDisponibles() {
         List<Vehiculo> catalogo = sistema.getCatalogoVehiculos();
         System.out.println("Catálogo de vehículos disponibles:");
