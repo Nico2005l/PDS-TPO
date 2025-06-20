@@ -8,11 +8,12 @@ public class FacadeVendedor {
     }
 
     public void verVehiculosDisponibles() {
-        List<Vehiculo> catalogo = sistema.getCatalogoVehiculos();
-        System.out.println("Catálogo de vehículos disponibles:");
-        for (Vehiculo v : catalogo) {
-            System.out.printf("- %s %s ($%d)%n", v.getClass().getSimpleName(), v.toString(), v.getCosto());
+        // Mostrar vehículos que no estén en proceso de venta
+        List<Vehiculo> vehiculosDisponibles = sistema.getCatalogoVehiculos();
+        for (Vehiculo vehiculo : vehiculosDisponibles) {
+            if (!vehiculo.isEnVenta()) {
+                System.out.println(vehiculo);
+            }
         }
     }
-
 }
