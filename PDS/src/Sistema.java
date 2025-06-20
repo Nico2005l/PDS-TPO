@@ -8,6 +8,7 @@ public class Sistema {
     private List<PedidoCompra> pedidoCompras;
 
 
+
     public Sistema() {
         this.catalogoVehiculos = new ArrayList<>();
         this.clientes = new ArrayList<>();
@@ -48,7 +49,10 @@ public class Sistema {
             throw new IllegalArgumentException("El vehículo ya está registrado.");
         }
     }
-    public void registrarPedido(PedidoCompra p) {
+    public void registrarPedido(Cliente c, Vendedor v, Vehiculo vehiculo, FormaPago forma) {
+        DetallePedido detalle = new DetallePedidoBuilder().getResult(vehiculo, c, v, forma);
+        PedidoCompra p = new PedidoCompra(detalle);
+
         if (!pedidoCompras.contains(p)) {
             pedidoCompras.add(p);
         }else {
@@ -56,9 +60,20 @@ public class Sistema {
         }
     }
 
-    public void realizarPedido(Cliente c, Vendedor v, Vehiculo vehiculo) {
-        // Implementación
+    public void getPedidosPorCliente(Cliente c) {
+        List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
+        for (PedidoCompra pedido : pedidoCompras) {
+            if (pedido.getDetallePedido().getCliente().equals(c)) {
+                pedidosPorCliente.add(pedido);
+            }
+        }
+        System.out.println("Pedidos encontrados para el cliente " + c.getNombre() + ":");
+        for (PedidoCompra pedido : pedidosPorCliente) {
+            System.out.println(pedido.getDetallePedido().toString());
+        }
+        // Aquí podrías retornar o imprimir los pedidos encontrados
     }
+
     public void generarInforme() {
         // Implementación
     }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class DetallePedidoBuilder {
     private DetallePedido detalle;
 
@@ -18,7 +21,11 @@ public class DetallePedidoBuilder {
     }
 
     public void buildAdicionales() {
-        // Implementar según lógica
+        // Ejemplo: agregar adicionales por defecto
+        List<ConfiguracionAdicional> adicionales = new ArrayList<>();
+        adicionales.add(new ConfiguracionAdicional("Seguro básico", 5000));
+        adicionales.add(new ConfiguracionAdicional("Kit de emergencia", 1500));
+        detalle.setAdicionales(adicionales);
     }
 
     public void buildVendedor(Vendedor vendedor) {
@@ -29,7 +36,14 @@ public class DetallePedidoBuilder {
         detalle.setFormaDePago(forma);
     }
 
-    public DetallePedido getResult() {
+    public DetallePedido getResult(Vehiculo vehiculo, Cliente cliente, Vendedor vendedor, FormaPago forma) {
+        reset();
+        buildVehiculo(vehiculo);
+        buildCliente(cliente);
+        buildAdicionales();
+        buildVendedor(vendedor);
+        buildFormaDePago(forma);
+
         return detalle;
     }
 }
