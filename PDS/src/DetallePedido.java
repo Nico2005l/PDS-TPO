@@ -38,10 +38,6 @@ public class DetallePedido {
         this.cliente = cliente;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }

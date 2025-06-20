@@ -70,7 +70,7 @@ public class Sistema {
     public List<PedidoCompra> getPedidosPorCliente(Cliente c) {
         List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
         for (PedidoCompra pedido : pedidoCompras) {
-            if (pedido.getDetallePedido().getCliente().equals(c)) {
+            if (pedido.getDetallePedido().getCliente().equals(cliente)) {
                 pedidosPorCliente.add(pedido);
             }
         }
