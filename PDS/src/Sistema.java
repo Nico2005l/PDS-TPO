@@ -6,6 +6,7 @@ public class Sistema {
     private List<Vehiculo> catalogoVehiculos;
     private List<Cliente> clientes;
     private List<PedidoCompra> pedidoCompras;
+    private Informe informe = new Informe();
 
 
 
@@ -66,7 +67,7 @@ public class Sistema {
         }
     }
 
-    public List<PedidoCompra> getPedidosPorCliente(Cliente cliente) {
+    public List<PedidoCompra> getPedidosPorCliente(Cliente c) {
         List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
         for (PedidoCompra pedido : pedidoCompras) {
             if (pedido.getDetallePedido().getCliente().equals(cliente)) {
@@ -76,10 +77,7 @@ public class Sistema {
         return pedidosPorCliente;
     }
 
-    public void realizarPedido(Cliente c, Vendedor v, Vehiculo vehiculo) {
-        // Implementación
-    }
-    public void generarInforme() {
-        // Implementación
+    public void generarInforme(String tipoInforme, String contenido) {
+        informe.imprimirInforme(tipoInforme, contenido);
     }
 }

@@ -32,9 +32,7 @@ public class DetallePedido {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
-    public Cliente getCliente() {
-        return cliente;
-    }
+    
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
@@ -62,22 +60,22 @@ public class DetallePedido {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("DetallePedido {\n");
+        sb.append("DetallePedido \n");
         sb.append("  nroPedido: ").append(nroPedido).append(",\n");
         sb.append("  fechaCreacion: ").append(fechaCreacion).append(",\n");
         sb.append("  cliente: ").append(cliente != null ? cliente.toString() : "null").append(",\n");
         sb.append("  vehiculo: ").append(vehiculo != null ? vehiculo.toString() : "null").append(",\n");
-        sb.append("  adicionales: [");
+        sb.append("  adicionales: ");
         if (adicionales != null && !adicionales.isEmpty()) {
             for (int i = 0; i < adicionales.size(); i++) {
                 sb.append(adicionales.get(i));
                 if (i < adicionales.size() - 1) sb.append(", ");
             }
         }
-        sb.append("],\n");
+        sb.append(",\n");
         sb.append("  vendedor: ").append(vendedor != null ? vendedor.toString() : "null").append(",\n");
         sb.append("  formaDePago: ").append(formaDePago != null ? formaDePago.toString() : "null").append("\n");
-        sb.append("}");
+        sb.append("");
         return sb.toString();
     }
 }

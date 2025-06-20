@@ -82,4 +82,10 @@ public abstract class Vehiculo {
         Vehiculo vehiculo = (Vehiculo) obj;
         return nroChasis != null && nroChasis.equals(vehiculo.nroChasis);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Vehiculo {marca='%s', modelo='%s', color='%s', nroChasis='%s', nroMotor='%s', costo=%d, enVenta=%b}",
+                marca, modelo, color, nroChasis, nroMotor, costo, enVenta);
+    }
 }
