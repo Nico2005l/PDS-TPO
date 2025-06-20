@@ -8,6 +8,7 @@ public class Sistema {
     private List<PedidoCompra> pedidoCompras;
 
 
+
     public Sistema() {
         this.catalogoVehiculos = new ArrayList<>();
         this.clientes = new ArrayList<>();
@@ -54,7 +55,10 @@ public class Sistema {
             throw new IllegalArgumentException("El vehículo ya está registrado.");
         }
     }
-    public void registrarPedido(PedidoCompra p) {
+    public void registrarPedido(Cliente c, Vendedor v, Vehiculo vehiculo, FormaPago forma) {
+        DetallePedido detalle = new DetallePedidoBuilder().getResult(vehiculo, c, v, forma);
+        PedidoCompra p = new PedidoCompra(detalle);
+
         if (!pedidoCompras.contains(p)) {
             pedidoCompras.add(p);
         }else {
