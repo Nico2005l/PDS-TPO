@@ -5,5 +5,10 @@ public class AreaCobranzas implements Area {
         System.out.println("Procesando pedido en el área de cobranzas.");
         p.avanzarEstado(siguienteArea);
     }
+    @Override
+    public void actualizarEstado() {
+
+        System.out.println("Área Ventas: estado interno actualizado.");
+    }
     
 }

@@ -5,5 +5,9 @@ public class AreaImpuestos implements Area {
         System.out.println("Procesando pedido en el área de impuestos.");
         p.avanzarEstado(siguienteArea);
     }
+    @Override
+    public void actualizarEstado() {
+        System.out.println("Área Ventas: estado interno actualizado.");
+    }
   
 }

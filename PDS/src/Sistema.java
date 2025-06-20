@@ -29,7 +29,13 @@ public class Sistema {
         return clientesPorFecha;
     }
 
-    
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public List<PedidoCompra> getPedidos() {
+        return pedidoCompras;
+    }
 
     public void cargarCatalogoVehiculos(List<Vehiculo> catalogoVehiculos) {
         this.catalogoVehiculos = catalogoVehiculos;
