@@ -13,4 +13,9 @@ public class Vendedor {
     public String getApellido() {
         return apellido;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Vendedor: %s %s", nombre, apellido);
+    }
 }

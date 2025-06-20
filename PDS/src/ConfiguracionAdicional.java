@@ -23,5 +23,10 @@ public class ConfiguracionAdicional {
         this.costo = costo;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Descripción: %s | Costo: $%.2f", descripcion, costo);
+    }
+
     
 }

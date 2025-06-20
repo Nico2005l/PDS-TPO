@@ -78,4 +78,14 @@ public class PedidoCompra {
     public DetallePedido getDetallePedido() {
         return detallePedido;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("");
+        sb.append("").append(detallePedido);
+        sb.append(", estadoPedido:").append(estadoPedido != null ? estadoPedido.getClass().getSimpleName()+"\n" : "Ninguno"+"\n");
+        sb.append(", historial:'").append(historial).append('\'');
+        return sb.toString();
+    }
 }

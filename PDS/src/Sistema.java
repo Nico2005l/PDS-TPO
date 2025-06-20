@@ -6,6 +6,7 @@ public class Sistema {
     private List<Vehiculo> catalogoVehiculos;
     private List<Cliente> clientes;
     private List<PedidoCompra> pedidoCompras;
+    private Informe informe = new Informe();
 
 
 
@@ -66,21 +67,17 @@ public class Sistema {
         }
     }
 
-    public void getPedidosPorCliente(Cliente c) {
+    public List<PedidoCompra> getPedidosPorCliente(Cliente c) {
         List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
         for (PedidoCompra pedido : pedidoCompras) {
             if (pedido.getDetallePedido().getCliente().equals(c)) {
                 pedidosPorCliente.add(pedido);
             }
         }
-        System.out.println("Pedidos encontrados para el cliente " + c.getNombre() + ":");
-        for (PedidoCompra pedido : pedidosPorCliente) {
-            System.out.println(pedido.getDetallePedido().toString());
-        }
-        // Aquí podrías retornar o imprimir los pedidos encontrados
+        return pedidosPorCliente;
     }
 
-    public void generarInforme() {
-        // Implementación
+    public void generarInforme(String tipoInforme, String contenido) {
+        informe.imprimirInforme(tipoInforme, contenido);
     }
 }

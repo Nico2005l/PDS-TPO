@@ -49,4 +49,9 @@ public class Cliente {
         Cliente other = (Cliente) obj;
         return dni != null && dni.equals(other.dni);
     }
+
+    @Override
+    public String toString() {
+        return String.format("Cliente: %s %s | DNI: %s | Email: %s | Teléfono: %s", nombre, apellido, dni, email, telefono);
+    }
 }

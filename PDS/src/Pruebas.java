@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Pruebas {
     public static void main(String[] args) {
         Sistema sistema = new Sistema();
@@ -10,6 +12,11 @@ public class Pruebas {
         sistema.registrarCliente(cliente);
         sistema.registrarVehiculo(vehiculo);
         sistema.registrarPedido(cliente, vendedor, vehiculo, formaPago);
-        sistema.getPedidosPorCliente(cliente);
+        List<PedidoCompra> pedidos = sistema.getPedidosPorCliente(cliente);
+
+       
+        for (PedidoCompra pedido : pedidos) {
+            sistema.generarInforme("Informe de Pedidos", pedido.toString());
         }
+}
 }

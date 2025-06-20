@@ -4,5 +4,10 @@ public class PagoContado implements FormaPago {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Pago Contado";
+    }
+
     
 }
