@@ -6,8 +6,29 @@ public class PedidoCompra {
     private List<Area> areas;
     private String historial;
 
+    public PedidoCompra() {
+        this.historial = "";
+        this.estadoPedido = null; // Inicializar estadoPedido como null
+        this.areas = new java.util.ArrayList<Area>();
+        this.detallePedido = new DetallePedido(); // Inicializar detallePedido
+        areas.add(new AreaVentas()); // Agregar área de ventas como ejemplo
+        areas.add(new AreaCobranzas()); // Agregar área de cobranzas como ejemplo
+        areas.add(new AreaImpuestos()); // Agregar área de impuestos como ejemplo
+        areas.add(new AreaEntrega()); // Agregar área de entrega como ejemplo
+        areas.add(new AreaSeguimiento()); // Agregar área de seguimiento como ejemplo
+        areas.add(new AreaEmbarque()); // Agregar área de embarque como ejemplo
+        areas.add(new AreaLogistica()); // Agregar área de logística como ejemplo
+    }
+
     public void avanzarEstado(Area nuevo) {
-        // Implementación
+        estadoPedido = nuevo;
+        notificarAreas();
+        historial += "Estado cambiado de " + (estadoPedido != null ? estadoPedido.getClass().getSimpleName() : "Ninguno") + " a " + nuevo.getClass().getSimpleName() + "\n";
+        if (estadoPedido != null) {
+            estadoPedido.procesarPedido(this);
+        }
+        
+        
     }
     public void crearDetallePedido() {
         // Implementación
@@ -20,13 +41,30 @@ public class PedidoCompra {
         return historial;
     }
     public void añadirArea(Area a) {
-        // Implementación
+        if (a == null) {
+            throw new IllegalArgumentException("El área no puede ser nula");
+        }
+        if (!areas.contains(a)) {
+            areas.add(a);
+        } else {
+            throw new IllegalArgumentException("El área ya está registrada.");
+        }
     }
     public void quitarArea(Area a) {
-        // Implementación
+        if (a == null) {
+            throw new IllegalArgumentException("El área no puede ser nula");
+        }
+        if (areas.contains(a)) {
+            areas.remove(a);
+        } else {
+            throw new IllegalArgumentException("El área no está registrada.");
+        }
     }
     private void notificarAreas() {
-        // Implementación
+        for (Area area : areas) {
+            System.out.println("Notificando a " + area.getClass().getSimpleName()  + " del cambio de estado del pedido.");
+        }
+        
     }
 
     @Override

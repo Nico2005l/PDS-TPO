@@ -1,10 +1,10 @@
 public class AreaSeguimiento implements Area {
     @Override
     public void procesarPedido(PedidoCompra p) {
-        // Implementación
-    }
-    @Override
-    public void actualizarEstado() {
-        // Implementación
+        System.out.println("Procesando pedido en el área de seguimiento.");
+        // Aquí podrías agregar lógica específica para el seguimiento del pedido.
+        // Por ejemplo, actualizar el estado del pedido o notificar al cliente.
+        
+        // Si no hay más áreas, podrías finalizar el proceso o realizar
     }
 }
