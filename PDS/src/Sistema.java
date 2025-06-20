@@ -62,6 +62,16 @@ public class Sistema {
         }
     }
 
+    public List<PedidoCompra> getPedidosPorCliente(Cliente cliente) {
+        List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
+        for (PedidoCompra pedido : pedidoCompras) {
+            if (pedido.getDetallePedido().getCliente().equals(cliente)) {
+                pedidosPorCliente.add(pedido);
+            }
+        }
+        return pedidosPorCliente;
+    }
+
     public void realizarPedido(Cliente c, Vendedor v, Vehiculo vehiculo) {
         // Implementación
     }
