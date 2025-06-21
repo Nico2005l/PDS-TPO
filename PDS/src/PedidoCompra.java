@@ -10,7 +10,7 @@ public class PedidoCompra {
     public PedidoCompra(DetallePedido detallePedido) {
 
         this.historial = "";
-        this.estadoPedido = null; // Inicializar estadoPedido como null
+        this.estadoPedido = new AreaVentas(); // Estado inicial del pedido
         this.areas = new java.util.ArrayList<Area>();
         this.detallePedido = detallePedido;
         areas.add(new AreaVentas()); // Agregar área de ventas como ejemplo
@@ -87,5 +87,9 @@ public class PedidoCompra {
         sb.append(", estadoPedido:").append(estadoPedido != null ? estadoPedido.getClass().getSimpleName()+"\n" : "Ninguno"+"\n");
         sb.append(", historial:'").append(historial).append('\'');
         return sb.toString();
+    }
+
+    public Area getEstado() {
+        return estadoPedido;
     }
 }

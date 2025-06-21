@@ -59,6 +59,7 @@ public class Sistema {
     public void registrarPedido(Cliente c, Vendedor v, Vehiculo vehiculo, FormaPago forma) {
         DetallePedido detalle = new DetallePedidoBuilder().getResult(vehiculo, c, v, forma);
         PedidoCompra p = new PedidoCompra(detalle);
+        
 
         if (!pedidoCompras.contains(p)) {
             pedidoCompras.add(p);
@@ -75,6 +76,16 @@ public class Sistema {
             }
         }
         return pedidosPorCliente;
+    }
+
+    public List<PedidoCompra> getPedidosPorEstado(Area estado) {
+        List<PedidoCompra> pedidosPorEstado = new ArrayList<>();
+        for (PedidoCompra pedido : pedidoCompras) {
+            if (pedido.getEstado().equals(estado)) {
+                pedidosPorEstado.add(pedido);
+            }
+        }
+        return pedidosPorEstado;
     }
 
     public void generarInforme(String titulo, String contenido) {

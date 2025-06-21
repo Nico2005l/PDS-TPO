@@ -16,9 +16,15 @@ public class Pruebas {
         sistema.registrarPedido(cliente, vendedor, vehiculo, formaPago);
         List<PedidoCompra> pedidos = sistema.getPedidosPorCliente(cliente);
 
+        for (PedidoCompra pedido : pedidos) {
+            System.out.println("Pedido Nro: " + pedido.getEstado());
+        }
+
         FacadeAdmin adminFacade = new FacadeAdmin(sistema);
 
-        adminFacade.informePorFecha(Date.valueOf(java.time.LocalDate.now()));
+        Area area = new AreaVentas();
+
+        adminFacade.informePorEstado(area);
 
         
         

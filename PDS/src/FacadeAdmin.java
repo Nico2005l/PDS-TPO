@@ -73,7 +73,21 @@ public class FacadeAdmin {
         }
     }
 
+    public void informePorEstado(Area estado) {
+        List<PedidoCompra> pedidosPorEstado = sistema.getPedidosPorEstado(estado);
+        if (pedidosPorEstado.isEmpty()) {
+            System.out.println("No hay pedidos con el estado: " + estado);
+        } else {
+            String contenido = "";
+            for (PedidoCompra pedido : pedidosPorEstado) {
+                contenido += pedido.toString() + "\n" + "---------------------------------\n";
+            }
+            sistema.generarInforme("Informe Por Estado", contenido);
+        }
+    }
+
     public void administrarConfiguracion() {
-        //terminar
+        //implementar lógica para administrar la configuración del sistema
+        System.out.println("Administrando configuración del sistema...");
     }
 }
