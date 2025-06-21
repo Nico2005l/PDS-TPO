@@ -32,9 +32,13 @@ public class PedidoCompra {
         
         
     }
-    public int getCosto() {
-        // Implementación
-        return 0;
+    public double getCosto() {
+
+        
+
+        return getDetallePedido().calcularCosto();
+
+        
     }
     public String getHistorial() {
         return historial;
@@ -84,8 +88,9 @@ public class PedidoCompra {
         StringBuilder sb = new StringBuilder();
         sb.append("");
         sb.append("").append(detallePedido);
-        sb.append(", estadoPedido:").append(estadoPedido != null ? estadoPedido.getClass().getSimpleName()+"\n" : "Ninguno"+"\n");
-        sb.append(", historial:'").append(historial).append('\'');
+        sb.append(" estadoPedido: ").append(estadoPedido != null ? estadoPedido.getClass().getSimpleName()+"\n" : "Ninguno"+"\n");
+        sb.append(" historial:'").append(historial).append('\''+"\n");
+        sb.append(" costo:").append(getCosto());
         return sb.toString();
     }
 

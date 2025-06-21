@@ -14,6 +14,17 @@ public class Sistema {
         this.catalogoVehiculos = new ArrayList<>();
         this.clientes = new ArrayList<>();
         this.pedidoCompras = new ArrayList<>();
+        // Cargar datos iniciales si es necesario
+        cargarDatosIniciales();
+    }
+
+    private void cargarDatosIniciales() {
+        // Aquí puedes cargar datos iniciales si es necesario
+        // Por ejemplo, agregar algunos vehículos y clientes de prueba
+        Vehiculo vehiculo1 = new Auto("Toyota", 500000, "Corolla", "Rojo", "CH123456789", "MO987654321");
+        Vehiculo vehiculo2 = new Auto("Ford", 600000, "Focus", "Azul", "CH987654321", "MO123456789");
+        catalogoVehiculos.add(vehiculo1);
+        catalogoVehiculos.add(vehiculo2);
     }
 
     public List<Vehiculo> getCatalogoVehiculos() {

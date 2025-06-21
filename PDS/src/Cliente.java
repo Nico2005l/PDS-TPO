@@ -52,6 +52,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return String.format("Cliente: %s %s | DNI: %s | Email: %s | Teléfono: %s", nombre, apellido, dni, email, telefono);
+        return String.format(" %s %s | DNI: %s | Email: %s | Teléfono: %s", nombre, apellido, dni, email, telefono);
     }
 }

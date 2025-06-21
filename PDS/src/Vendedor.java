@@ -16,6 +16,6 @@ public class Vendedor {
 
     @Override
     public String toString() {
-        return String.format("Vendedor: %s %s", nombre, apellido);
+        return String.format(" %s %s", nombre, apellido);
     }
 }

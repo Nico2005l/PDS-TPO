@@ -85,7 +85,7 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return String.format("Vehiculo {marca='%s', modelo='%s', color='%s', nroChasis='%s', nroMotor='%s', costo=%d, enVenta=%b}",
+        return String.format("marca='%s', modelo='%s', color='%s', nroChasis='%s', nroMotor='%s', costo=%d, enVenta=%b",
                 marca, modelo, color, nroChasis, nroMotor, costo, enVenta);
     }
 }
