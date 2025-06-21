@@ -10,11 +10,13 @@ public class Informe {
         System.out.printf("Email:       %s%n", concesionaria.getEmail());
         System.out.printf("Página Web:  %s%n", concesionaria.getPaginaWeb());
         System.out.println("========================================");
-        System.out.println(titulo);
+        System.out.printf("        %s%n", titulo);
         System.out.println("========================================");
-        System.out.println(contenido);
+        System.out.printf(contenido);
         System.out.println("========================================");
         System.out.println("Informe generado el " + java.time.LocalDate.now());
         System.out.println("========================================");
     }
+
+    
 }

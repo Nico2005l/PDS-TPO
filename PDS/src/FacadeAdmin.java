@@ -1,3 +1,6 @@
+import java.sql.Date;
+import java.util.List;
+
 public class FacadeAdmin {
     private Sistema sistema;
 
@@ -53,8 +56,21 @@ public class FacadeAdmin {
         }
     }
 
-    public void generarInformes() {
-        sistema.generarInforme();
+    public void generarInforme() {
+       
+    }
+
+    public void informePorFecha(Date fecha) {
+        List<PedidoCompra> pedidosPorFecha = sistema.getPedidosPorFecha(fecha);
+        if (pedidosPorFecha.isEmpty()) {
+            System.out.println("No hay pedidos para la fecha: " + fecha);
+        } else {
+            String contenido = "";
+            for (PedidoCompra pedido : pedidosPorFecha) {
+                contenido += pedido.toString() + "\n" + "---------------------------------\n";
+            }
+            sistema.generarInforme("Informe Por Fecha", contenido);
+        }
     }
 
     public void administrarConfiguracion() {

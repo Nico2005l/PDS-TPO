@@ -70,14 +70,14 @@ public class Sistema {
     public List<PedidoCompra> getPedidosPorCliente(Cliente c) {
         List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
         for (PedidoCompra pedido : pedidoCompras) {
-            if (pedido.getDetallePedido().getCliente().equals(cliente)) {
+            if (pedido.getDetallePedido().getCliente().equals(c)) {
                 pedidosPorCliente.add(pedido);
             }
         }
         return pedidosPorCliente;
     }
 
-    public void generarInforme(String tipoInforme, String contenido) {
-        informe.imprimirInforme(tipoInforme, contenido);
+    public void generarInforme(String titulo, String contenido) {
+        informe.imprimirInforme(titulo, contenido);
     }
 }

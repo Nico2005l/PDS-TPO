@@ -1,4 +1,6 @@
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
+
 import java.util.List;
 
 public class DetallePedido {
@@ -12,7 +14,8 @@ public class DetallePedido {
 
     public DetallePedido() {
         this.nroPedido = (int) (Math.random() * 1000000); // Genera un número de pedido aleatorio
-        this.fechaCreacion = new Date(); // Fecha actual
+        Date fechaActual = Date.valueOf(java.time.LocalDate.now());
+        this.fechaCreacion = fechaActual; // Fecha actual
     }
 
     public double calcularCosto() {
@@ -40,6 +43,10 @@ public class DetallePedido {
 
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public void setFormaDePago(FormaPago formaDePago) {

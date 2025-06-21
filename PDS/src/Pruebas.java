@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.util.List;
 
 public class Pruebas {
@@ -12,11 +13,14 @@ public class Pruebas {
         sistema.registrarCliente(cliente);
         sistema.registrarVehiculo(vehiculo);
         sistema.registrarPedido(cliente, vendedor, vehiculo, formaPago);
+        sistema.registrarPedido(cliente, vendedor, vehiculo, formaPago);
         List<PedidoCompra> pedidos = sistema.getPedidosPorCliente(cliente);
 
-       
-        for (PedidoCompra pedido : pedidos) {
-            sistema.generarInforme("Informe de Pedidos", pedido.toString());
-        }
+        FacadeAdmin adminFacade = new FacadeAdmin(sistema);
+
+        adminFacade.informePorFecha(Date.valueOf(java.time.LocalDate.now()));
+
+        
+        
 }
 }
