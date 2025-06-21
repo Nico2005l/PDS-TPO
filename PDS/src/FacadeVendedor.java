@@ -8,6 +8,7 @@ public class FacadeVendedor {
     }
 
     public void verVehiculosDisponibles() {
+        System.out.println();
         // Mostrar vehículos que no estén en proceso de venta
         List<Vehiculo> vehiculosDisponibles = sistema.getCatalogoVehiculos();
         for (Vehiculo vehiculo : vehiculosDisponibles) {

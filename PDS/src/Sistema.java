@@ -68,7 +68,7 @@ public class Sistema {
         }
     }
     public void registrarPedido(Cliente c, Vendedor v, Vehiculo vehiculo, FormaPago forma) {
-        DetallePedido detalle = new DetallePedidoBuilder().getResult(vehiculo, c, v, forma);
+        DetallePedido detalle = new DetallePedidoBuilder().getResult(vehiculo, c, v, forma, List.of());
         PedidoCompra p = new PedidoCompra(detalle);
         
 
@@ -79,10 +79,10 @@ public class Sistema {
         }
     }
 
-    public List<PedidoCompra> getPedidosPorCliente(Cliente c) {
+    public List<PedidoCompra> getPedidosPorCliente(String dni) {
         List<PedidoCompra> pedidosPorCliente = new ArrayList<>();
         for (PedidoCompra pedido : pedidoCompras) {
-            if (pedido.getDetallePedido().getCliente().equals(c)) {
+            if (pedido.getDetallePedido().getCliente().getDni().equals(dni)) {
                 pedidosPorCliente.add(pedido);
             }
         }

@@ -2,7 +2,12 @@ import java.util.List;
 
 public class FacadeComprador {
     private Sistema sistema;
-    private Cliente cliente;
+    private String cliente;
+
+    public FacadeComprador(Sistema sistema, String cliente) {
+        this.sistema = sistema;
+        this.cliente = cliente;
+    }
 
     public void verMisPedidos() {
         List<PedidoCompra> pedidos = sistema.getPedidosPorCliente(cliente);

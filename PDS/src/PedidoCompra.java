@@ -20,12 +20,13 @@ public class PedidoCompra {
         areas.add(new AreaSeguimiento()); // Agregar área de seguimiento como ejemplo
         areas.add(new AreaEmbarque()); // Agregar área de embarque como ejemplo
         areas.add(new AreaLogistica()); // Agregar área de logística como ejemplo
+        avanzarEstado(estadoPedido); // Procesar el pedido en el estado inicial
     }
 
     public void avanzarEstado(Area nuevo) {
+        historial += "Estado cambiado de " + (estadoPedido != null ? estadoPedido.getClass().getSimpleName() : "Ninguno") + " a " + nuevo.getClass().getSimpleName() + "\n";
         estadoPedido = nuevo;
         notificarAreas();
-        historial += "Estado cambiado de " + (estadoPedido != null ? estadoPedido.getClass().getSimpleName() : "Ninguno") + " a " + nuevo.getClass().getSimpleName() + "\n";
         if (estadoPedido != null) {
             estadoPedido.procesarPedido(this);
         }
@@ -64,9 +65,7 @@ public class PedidoCompra {
         }
     }
     private void notificarAreas() {
-        for (Area area : areas) {
-            System.out.println("Notificando a " + area.getClass().getSimpleName()  + " del cambio de estado del pedido.");
-        }
+        
         
     }
 
@@ -89,7 +88,10 @@ public class PedidoCompra {
         sb.append("");
         sb.append("").append(detallePedido);
         sb.append(" estadoPedido: ").append(estadoPedido != null ? estadoPedido.getClass().getSimpleName()+"\n" : "Ninguno"+"\n");
-        sb.append(" historial:'").append(historial).append('\''+"\n");
+        sb.append(" historial:\n");
+        for (String linea : historial.split("\n")) {
+            sb.append("   ").append(linea).append("\n");
+        }
         sb.append(" costo:").append(getCosto());
         return sb.toString();
     }

@@ -1,7 +1,7 @@
 public class AreaSeguimiento implements Area {
     @Override
     public void procesarPedido(PedidoCompra p) {
-        System.out.println("Procesando pedido en el área de seguimiento.");
+       
     }
 
     @Override

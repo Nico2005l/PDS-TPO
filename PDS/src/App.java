@@ -115,12 +115,61 @@ public class App {
                     break;
                 case 2:
                     System.out.println("Menú de Comprador seleccionado.");
-                    // Lógica para comprador aquí
+                    // Menú de Comprador
+                    int opcionComprador;
+                    do {
+                        System.out.print("Ingrese su DNI: ");
+                        String dniComprador = scanner.nextLine();
+                        FacadeComprador facadeComprador = new FacadeComprador(sistema, dniComprador);
+                        System.out.println("=== Menú Comprador ===");
+                        System.out.println("1. Ver vehículos disponibles");
+                        System.out.println("2. Ver mis pedidos");
+                        System.out.println("0. Volver");
+                        System.out.print("Seleccione una opción: ");
+                        opcionComprador = scanner.nextInt();
+                        scanner.nextLine(); // Limpiar buffer
+                        switch (opcionComprador) {
+                            case 1:
+                                facadeComprador.verVehiculosDisponibles();
+                                break;
+                            case 2:
+                                facadeComprador.verMisPedidos();
+                                break;
+                            case 0:
+                                System.out.println("Volviendo al menú principal...");
+                                break;
+                            default:
+                                System.out.println("Opción no válida. Intente nuevamente.");
+                        }
+                        System.out.println();
+                    } while (opcionComprador != 0); 
                     break;
                 case 3:
                     System.out.println("Menú de Vendedor seleccionado.");
-                    // Lógica para vendedor aquí
+                    // Menú de Administrador
+                    int opcionVendedor;
+                    do {
+                        FacadeVendedor facadeVendedor = new FacadeVendedor(sistema);
+                        System.out.println("=== Menú Vendedor ===");
+                        System.out.println("1. Ver vehículos disponibles");
+                        System.out.println("0. Volver");
+                        System.out.print("Seleccione una opción: ");
+                        opcionVendedor = scanner.nextInt();
+                        scanner.nextLine(); // Limpiar buffer
+                        switch (opcionVendedor) {
+                            case 1:
+                                facadeVendedor.verVehiculosDisponibles();
+                                break;
+                            case 0:
+                                System.out.println("Volviendo al menú principal...");
+                                break;
+                            default:
+                                System.out.println("Opción no válida. Intente nuevamente.");
+                        }
+                        System.out.println();
+                    } while (opcionVendedor != 0);
                     break;
+
                 case 0:
                     System.out.println("Saliendo del programa...");
                     break;
