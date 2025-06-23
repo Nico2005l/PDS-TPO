@@ -1,5 +1,5 @@
 public class Informe {
-    public void imprimirInforme(String titulo, String contenido) {
+    public static void imprimirInforme(String titulo, String contenido) {
         ConcesionariaSingleton concesionaria = ConcesionariaSingleton.getConcesionaria();
         System.out.println("========================================");
         System.out.printf("        %s%n", concesionaria.getRazonSocial());

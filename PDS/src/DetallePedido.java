@@ -63,6 +63,14 @@ public class DetallePedido {
         return fechaCreacion;
     }
 
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public FormaPago getFormaPago() {
+        return formaDePago;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -49,11 +49,10 @@ public class FacadeAdmin {
                 .findFirst()
                 .orElse(null);
         if (clienteAEliminar != null) {
-            // Actualizar cliente
             sistema.getClientes().remove(clienteAEliminar);
             System.out.println("Cliente eliminado: " + clienteAEliminar.getNombre() + " " + clienteAEliminar.getApellido());
-        }else {
-            throw new IllegalArgumentException("El cliente no está registrado.");
+        } else {
+            System.out.println("No se encontró un cliente con DNI: " + cliente);
         }
     }
 
@@ -63,11 +62,10 @@ public class FacadeAdmin {
                 .findFirst()
                 .orElse(null);
         if (vehiculoAEliminar != null) {
-            // Actualizar vehículo
             sistema.getCatalogoVehiculos().remove(vehiculoAEliminar);
             System.out.println("Vehículo eliminado: " + vehiculoAEliminar.getMarca() + " " + vehiculoAEliminar.getModelo());
-        }else {
-            throw new IllegalArgumentException("El vehículo no está registrado.");
+        } else {
+            System.out.println("No se encontró un vehículo con número de chasis: " + vehiculo);
         }
     }
 
@@ -77,11 +75,10 @@ public class FacadeAdmin {
                 .findFirst()
                 .orElse(null);
         if (pedidoAEliminar != null) {
-            // Actualizar pedido
             sistema.getPedidos().remove(pedidoAEliminar);
             System.out.println("Pedido eliminado: " + pedidoAEliminar.getDetallePedido().getNroPedido());
-        }else {
-            throw new IllegalArgumentException("El pedido no está registrado.");
+        } else {
+            System.out.println("No se encontró un pedido con número: " + pedido);
         }
     }
 

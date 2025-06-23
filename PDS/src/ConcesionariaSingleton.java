@@ -1,6 +1,5 @@
 public class ConcesionariaSingleton {
     private static ConcesionariaSingleton concesionariaSingleton;
-
     private String razonSocial = "Concesionaria S.A.";
     private String cuit = "20-12345678-9";
     private String direccion = "Av. Siempre Viva 1234";

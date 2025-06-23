@@ -34,12 +34,7 @@ public class PedidoCompra {
         
     }
     public double getCosto() {
-
-        
-
         return getDetallePedido().calcularCosto();
-
-        
     }
     public String getHistorial() {
         return historial;
@@ -65,8 +60,6 @@ public class PedidoCompra {
         }
     }
     private void notificarAreas() {
-        
-        
     }
 
     @Override
