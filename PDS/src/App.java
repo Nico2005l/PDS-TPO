@@ -20,6 +20,7 @@ public class App {
             switch (opcion) {
                 case 1:
                     System.out.println("Menú de Administrador seleccionado.");
+                    System.out.println();
                     // Menú de Administrador
                     int opcionAdmin;
                     do {
@@ -37,6 +38,7 @@ public class App {
                         System.out.println("10. Registrar pedido");
                         System.out.println("0. Volver");
                         System.out.print("Seleccione una opción: ");
+                        System.out.println();
                         opcionAdmin = scanner.nextInt();
                         scanner.nextLine(); // Limpiar buffer
 
@@ -114,13 +116,31 @@ public class App {
                     } while (opcionAdmin != 0);
                     break;
                 case 2:
+                    System.out.println();
                     System.out.println("Menú de Comprador seleccionado.");
+                    System.out.println();
                     // Menú de Comprador
                     int opcionComprador;
+                    boolean dniValido = false;
+                    String dniComprador = null;
+                    scanner.nextLine(); // Limpiar buffer antes de pedir el DNI
+                    while (!dniValido) {
+                        
+                        System.out.println("Para acceder al menú, debe ingresar su DNI.");
+                        System.out.println("Ingrese su DNI: ");
+                        dniComprador = scanner.nextLine();
+                        // Validación del DNI
+                        if (dniComprador == null || dniComprador.isEmpty()) {
+                            System.out.println("DNI inválido. Intente nuevamente.");
+                            continue; // Volver al inicio del bucle
+                        }else {
+                            dniValido = !dniValido;
+                        } 
+                    }
+                    
                     do {
-                        System.out.print("Ingrese su DNI: ");
-                        String dniComprador = scanner.nextLine();
                         FacadeComprador facadeComprador = new FacadeComprador(sistema, dniComprador);
+                        System.out.println();
                         System.out.println("=== Menú Comprador ===");
                         System.out.println("1. Ver vehículos disponibles");
                         System.out.println("2. Ver mis pedidos");
@@ -130,9 +150,15 @@ public class App {
                         scanner.nextLine(); // Limpiar buffer
                         switch (opcionComprador) {
                             case 1:
+                                System.out.println();
+                                System.out.println("Vehículos disponibles:");
+                                System.out.println();
                                 facadeComprador.verVehiculosDisponibles();
                                 break;
                             case 2:
+                                System.out.println();
+                                System.out.println("Mis pedidos:");
+                                System.out.println();
                                 facadeComprador.verMisPedidos();
                                 break;
                             case 0:
@@ -145,7 +171,9 @@ public class App {
                     } while (opcionComprador != 0); 
                     break;
                 case 3:
+                    System.out.println();
                     System.out.println("Menú de Vendedor seleccionado.");
+                    System.out.println();
                     // Menú de Administrador
                     int opcionVendedor;
                     do {
@@ -158,6 +186,8 @@ public class App {
                         scanner.nextLine(); // Limpiar buffer
                         switch (opcionVendedor) {
                             case 1:
+                                System.out.println();
+                                System.out.println("Vehículos disponibles:");
                                 facadeVendedor.verVehiculosDisponibles();
                                 break;
                             case 0:

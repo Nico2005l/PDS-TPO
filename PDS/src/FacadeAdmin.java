@@ -144,10 +144,11 @@ public class FacadeAdmin {
         System.out.println("Ingrese el apellido del vendedor:");
         String apellidoVendedor = scanner.nextLine();
 
+        System.out.println("Seleccione el vehículo a comprar:");
         for (Vehiculo v : sistema.getCatalogoVehiculos()) {
             System.out.println("Vehículo disponible: " + v.getMarca() + " " + v.getModelo() + " - Chasis: " + v.getNroChasis());
         }
-
+        System.out.println();
         System.out.println("Ingrese el número de chasis del vehículo seleccionado:");
         String nroChasisVehiculo = scanner.nextLine();
 
